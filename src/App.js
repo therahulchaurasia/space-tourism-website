@@ -1,11 +1,9 @@
-import logo from './logo.svg'
-import './App.css'
-import data from './data.json'
-import Home from './pages/Home'
-import Destination from './pages/Destination'
-import Crew from './pages/Crew'
-import Technology from './pages/Technology'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import './App.css'
+import Crew from './pages/Crew'
+import Destination from './pages/Destination'
+import Home from './pages/Home'
+import Technology from './pages/Technology'
 //TODO: Create a custom not found page for this project.
 const router = createBrowserRouter([
   {
