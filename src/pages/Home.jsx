@@ -1,39 +1,29 @@
-import React from 'react'
-import logo from '../assets/shared/logo.svg'
-import hamburger from '../assets/shared/icon-hamburger.svg'
+import React, { useState } from 'react'
+import Navbar from '../components/Navbar'
+
 const Home = () => {
+  const [navbarToggle, setNavbarToggle] = useState(false)
   return (
-    <div className="">
-      <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-screen h-screen absolute">
-        <navbar className="flex justify-between">
-          <img src={logo} alt="Logo" className="max-w-full h-auto" />
-          <img src={hamburger} alt="hamburger" className="max-w-full h-auto" />
-        </navbar>
-        <navbar className="flex justify-between">
-          <div
-            style={{ backgroundImage: `${logo}` }}
-            alt="Logo"
-            className="max-w-full h-auto"
-          ></div>
-          <div
-            src={hamburger}
-            alt="hamburger"
-            className="max-w-full h-auto"
-          ></div>
-        </navbar>
-        <section>
-          <h5>So, You Want To Travel To Space</h5>
-          <h1>Space</h1>
-          <h6>
-            Let's face it; if you want to go to space, you might as well
-            genuinely go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relax because we'll give you a truly out of this
-            world experience!
-          </h6>
-        </section>
-        <div>
-          <button>Explore</button>
-        </div>
+    <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-screen h-screen absolute">
+      <Navbar />
+      <section className="text-center my-10">
+        <h5 className="uppercase font-barlow tracking-wide text-lilac">
+          So, You Want To Travel To Space
+        </h5>
+        <h1 className="uppercase font-bellefair text-white text-7xl my-4">
+          Space
+        </h1>
+        <h6 className="w-9/12 font-barlow text-lilac mx-auto">
+          Let's face it; if you want to go to space, you might as well genuinely
+          go to outer space and not hover kind of on the edge of it. Well sit
+          back, and relax because we'll give you a truly out of this world
+          experience!
+        </h6>
+      </section>
+      <div className="text-center">
+        <button className="bg-white w-32 h-32 rounded-full font-bellefair tracking-wide uppercase text-l">
+          Explore
+        </button>
       </div>
     </div>
   )

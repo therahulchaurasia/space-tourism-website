@@ -4,6 +4,7 @@ import Crew from './pages/Crew'
 import Destination from './pages/Destination'
 import Home from './pages/Home'
 import Technology from './pages/Technology'
+
 //TODO: Create a custom not found page for this project.
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <div className="">
       <RouterProvider router={router} />
     </div>
   )
