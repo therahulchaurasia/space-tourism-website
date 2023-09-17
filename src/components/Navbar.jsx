@@ -4,7 +4,7 @@ import hamburger from '../assets/shared/icon-hamburger.svg'
 const Navbar = () => {
   return (
     <div>
-      <navbar className="flex justify-between items-center mx-6 my-6">
+      <nav className="flex justify-between items-center mx-6 my-6">
         <img src={logo} alt="Logo" className="w-10 h-10" />
         <img
           src={hamburger}
@@ -14,7 +14,7 @@ const Navbar = () => {
           //   console.log('HEllo')
           // }}
         />
-      </navbar>
+      </nav>
     </div>
   )
 }

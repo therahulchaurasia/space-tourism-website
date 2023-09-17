@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 
 const Home = () => {
-  const [navbarToggle, setNavbarToggle] = useState(false)
   return (
-    <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-screen h-screen absolute">
+    <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-screen min-w-screen min-h-screen absolute">
       <Navbar />
       <section className="text-center my-10">
         <h5 className="uppercase font-barlow tracking-wide text-lilac">
