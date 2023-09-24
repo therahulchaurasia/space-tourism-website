@@ -3,14 +3,14 @@ import Navbar from '../components/Navbar'
 import commander from '../assets/crew/image-douglas-hurley.webp'
 const Crew = () => {
   return (
-    <div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover min-h-screen w-screen min-w-screen text-center absolute">
+    <div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover min-h-screen w-screen min-w-screen  absolute">
       <Navbar />
-      <h6 className="text-white font-barlow uppercase tracking-widest mb-8">
+      <h6 className="text-white font-barlow uppercase tracking-widest mb-8 text-center">
         <span className="text-gray-500 font-bold pr-2">02</span> Meet your crew
       </h6>
-      <div className="mb-8">
+      <div className="mb-8 border-b border-slate-600 w-10/12 mx-auto">
         <img src={commander} alt="" className="w-1/2 mx-auto" />
-        <hr className="w-10/12 mx-auto opacity-30" />
+        {/* <hr className="w-10/12 mx-auto opacity-30" /> */}
       </div>
       <div className="flex justify-between w-1/4 mx-auto mb-8">
         <button className="w-3 h-3 rounded-full bg-zinc-600"></button>
@@ -18,7 +18,7 @@ const Crew = () => {
         <button className="w-3 h-3 rounded-full bg-zinc-600"></button>
         <button className="w-3 h-3 rounded-full bg-zinc-600"></button>
       </div>
-      <div className="mb-8">
+      <div className="mb-8 text-center">
         <h5 className="uppercase font-bellefair text-zinc-400 mb-2">
           Commander
         </h5>

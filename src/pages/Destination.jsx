@@ -3,9 +3,9 @@ import Navbar from '../components/Navbar'
 import moon from '../assets/destination/image-moon.webp'
 const Destination = () => {
   return (
-    <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-screen min-w-screen min-h-screen text-center absolute">
+    <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-screen min-w-screen min-h-screen absolute">
       <Navbar />
-      <h6 className="text-white font-barlow uppercase tracking-widest mb-8">
+      <h6 className="text-white  text-center  font-barlow uppercase tracking-widest mb-8">
         <span className="text-gray-500 font-bold pr-2">01</span> Pick your
         destination
       </h6>
@@ -26,7 +26,7 @@ const Destination = () => {
           Titan
         </p>
       </div>
-      <div className="mb-8">
+      <div className="mb-8  text-center">
         <h4 className="uppercase text-white font-bellefair text-5xl mb-2">
           Moon
         </h4>
@@ -36,15 +36,15 @@ const Destination = () => {
           there, take in some history by visiting the Luna 2 and Apollo 11
           landing sites.
         </p>
-        <hr className="w-10/12 mx-auto opacity-30" />
+        <span className="w-10/12 border-b-2 mx-auto "></span>
       </div>
-      <div className="mb-8">
+      <div className="mb-8  text-center border-t w-10/12 mx-auto pt-3  border-slate-700">
         <h5 className="uppercase text-lilac font-barlow tracking-widest mb-3">
           Avg. Distance
         </h5>
         <h2 className="text-white text-3xl font-bellefair">384,400 KM</h2>
       </div>
-      <div className="mb-8">
+      <div className="mb-8  text-center ">
         <h5 className="uppercase text-lilac font-barlow tracking-widest mb-3">
           Est. Travel Time
         </h5>

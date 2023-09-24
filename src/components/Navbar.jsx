@@ -4,6 +4,7 @@ import hamburger from '../assets/shared/icon-hamburger.svg'
 import close from '../assets/shared/icon-close.svg'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   const [toggleNavBar, setToggleNavBar] = useState(false)
   return (
@@ -21,7 +22,7 @@ const Navbar = () => {
           whileHover={{ rotate: 90 }}
           transition={{ ease: 'easeOut', duration: 0.2 }}
           alt="hamburger"
-          className="h-auto max-w-full"
+          className="h-auto max-w-full md:hidden"
           onClick={() => {
             setToggleNavBar(!toggleNavBar)
           }}
@@ -33,16 +34,16 @@ const Navbar = () => {
         // transition={{ type: 'spring', stiffness: 200 }}
         // transition={{ delay: 5 }}
         className={classNames(
-          'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl',
+          'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl md:hidden',
           { hidden: !toggleNavBar, fixed: toggleNavBar }
         )}
       >
         <div className="my-6 mx-6 flex items-center justify-end">
           <motion.img
-            animate={{
-              rotate: [0, 200, 200, 0],
-              // x: [0, 200, 200, 0, -200, -200, 0],
-            }} //! Keyframing
+            // animate={{
+            //   rotate: [0, 200, 200, 0],
+            //   // x: [0, 200, 200, 0, -200, -200, 0],
+            // }} //! Keyframing
             transition={{ repeat: Infinity, duration: 0.2 }}
             // transition={{ ease: 'easeOut', duration: 0.2 }}
             src={close}
@@ -53,18 +54,26 @@ const Navbar = () => {
             }}
           />
         </div>
-        <div className="uppercase text-white mt-8 flex flex-col gap-y-4 font-barlow px-10">
-          <h4>
-            <span className="font-bold mr-2">00</span> Home
+        <div className="uppercase text-white mt-8 flex flex-col justify-start gap-y-4 font-barlow pl-10 pr-1">
+          <h4 className="border-r-4">
+            <Link to="/">
+              <span className="font-bold mr-2 ">00</span> Home
+            </Link>
           </h4>
           <h4>
-            <span className="font-bold  mr-2">01</span> Destination
+            <Link to="/destination">
+              <span className="font-bold  mr-2">01</span> Destination
+            </Link>
           </h4>
           <h4>
-            <span className="font-bold  mr-2">02</span> Crew
+            <Link to="/crew">
+              <span className="font-bold  mr-2">02</span> Crew
+            </Link>
           </h4>
           <h4>
-            <span className="font-bold  mr-2">03</span> Technology
+            <Link to="/technology">
+              <span className="font-bold  mr-2">03</span> Technology
+            </Link>
           </h4>
         </div>
       </motion.aside>
