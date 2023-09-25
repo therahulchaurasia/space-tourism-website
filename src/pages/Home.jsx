@@ -2,26 +2,28 @@ import Navbar from '../components/Navbar'
 
 const Home = () => {
   return (
-    <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-screen min-w-screen min-h-screen absolute">
+    <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
       <Navbar />
-      <section className="text-center my-10">
-        <h5 className="uppercase font-barlow tracking-wide text-lilac md:text-xl">
-          So, You Want To Travel To Space
-        </h5>
-        <h1 className="uppercase font-bellefair text-white text-7xl my-4 md:text-[150px]">
-          Space
-        </h1>
-        <h6 className="w-9/12 font-barlow text-lilac mx-auto sm:w-7/12">
-          Let's face it; if you want to go to space, you might as well genuinely
-          go to outer space and not hover kind of on the edge of it. Well sit
-          back, and relax because we'll give you a truly out of this world
-          experience!
-        </h6>
-      </section>
-      <div className="text-center">
-        <button className="bg-white w-32 h-32 rounded-full font-bellefair tracking-wide uppercase text-l sm:w-48 sm:h-48 md:w-60 md:h-60 sm:text-2xl md:text-3xl">
-          Explore
-        </button>
+      <div className="flex flex-col xl:flex-row items-center justify-around xl:mt-20">
+        <section className="text-center my-10 xl:w-2/5 xl:text-start">
+          <h5 className="uppercase font-barlow tracking-wide text-lilac md:text-xl xl:pl-2 xl:text-3xl">
+            So, You Want To Travel To
+          </h5>
+          <h1 className="uppercase font-bellefair text-white text-7xl my-4 md:text-[150px]">
+            Space
+          </h1>
+          <h6 className="w-9/12 font-barlow text-lilac mx-auto sm:w-7/12 xl:m-0 xl:pl-2 xl:text-xl xl:w-8/12">
+            Let's face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we'll give you a truly out of this
+            world experience!
+          </h6>
+        </section>
+        <div className="text-center xl:w-2/5">
+          <button className="bg-white w-32 h-32 rounded-full font-bellefair tracking-wide uppercase text-l sm:w-40 sm:h-40 md:w-52 md:h-52 sm:text-2xl md:text-3xl xl:w-60 xl:h-60">
+            Explore
+          </button>
+        </div>
       </div>
     </div>
   )

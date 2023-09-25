@@ -11,6 +11,8 @@ import bgCrewDesktop from './src/assets/crew/background-crew-desktop.jpg'
 import bgTechMobile from './src/assets/technology/background-technology-mobile.jpg'
 import bgTechTablet from './src/assets/technology/background-technology-tablet.jpg'
 import bgTechDesktop from './src/assets/technology/background-technology-desktop.jpg'
+import rocketBanner from './src/assets/technology/image-launch-vehicle-landscape.jpg'
+import rocketBannerDesktop from './src/assets/technology/image-launch-vehicle-portrait.jpg'
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -44,6 +46,10 @@ module.exports = {
           "url('/src/assets/technology/background-technology-tablet.jpg')",
         techDesktop:
           "url('/src/assets/technology/background-technology-desktop.jpg')",
+        rocketBanner:
+          "url('/src/assets/technology/image-launch-vehicle-landscape.jpg')",
+        rocketBannerDesktop:
+          "url('/src/assets/technology/image-launch-vehicle-portrait.jpg')",
       },
     },
   },
