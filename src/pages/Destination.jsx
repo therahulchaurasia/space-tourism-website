@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import moon from '../assets/destination/image-moon.webp'
+import { motion } from 'framer-motion'
 const Destination = () => {
   return (
     <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
@@ -12,7 +13,9 @@ const Destination = () => {
       <div className="flex flex-col xl:flex-row xl:justify-around">
         <section className="xl:w-3/12">
           <div className="mb-6">
-            <img
+            <motion.img
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 200 }}
               src={moon}
               alt=""
               className="w-1/2 mx-auto sm:w-5/12 xl:w-full"
