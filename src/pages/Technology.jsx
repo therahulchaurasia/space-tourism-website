@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import rocketld from '../assets/technology/image-launch-vehicle-landscape.jpg'
 import rocketpt from '../assets/technology/image-launch-vehicle-portrait.jpg'
 const Technology = () => {
+  const [showTech, setShowTech] = useState([])
+  const [techIndex, setTechIndex] = useState(0)
+  const fetchData = async () => {
+    try {
+      let res = await fetch('technology.json', {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      })
+      let result = await res.json()
+      setShowTech(result.technology[techIndex])
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [techIndex])
+  console.log(showTech)
+
   return (
     <div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
       <Navbar />
@@ -12,23 +33,42 @@ const Technology = () => {
       </h6>
       <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center">
         <div className="mb-8">
-          <img src={rocketld} alt="" className="w-full h-auto xl:hidden" />
+          <img
+            src={showTech?.images?.landscape}
+            alt=""
+            className="w-full h-auto xl:hidden"
+          />
         </div>
         <div className="mb-8 xl:order-3 xl:w-4/12">
           <img
-            src={rocketpt}
+            src={showTech?.images?.portrait}
             alt=""
             className="hidden w-full h-auto xl:block"
           />
         </div>
         <div className="flex justify-between mx-auto w-2/5 mb-6 sm:w-3/12 xl:flex-col xl:w-1/12 xl:m-0 xl:items-end gap-y-8 font-bellefair xl:text-2xl">
-          <button className="bg-white w-10 h-10 rounded-full xl:w-14 xl:h-14 ">
+          <button
+            className="bg-white w-10 h-10 rounded-full xl:w-14 xl:h-14 "
+            onClick={() => {
+              setTechIndex(0)
+            }}
+          >
             1
           </button>
-          <button className="text-white border border-gray-600 w-10 h-10 rounded-full xl:w-14 xl:h-14">
+          <button
+            className="text-white border border-gray-600 w-10 h-10 rounded-full xl:w-14 xl:h-14"
+            onClick={() => {
+              setTechIndex(1)
+            }}
+          >
             {/* TODO: border-l. looks cool */}2
           </button>
-          <button className="text-white  w-10 h-10 rounded-full border-l xl:w-14 xl:h-14">
+          <button
+            className="text-white  w-10 h-10 rounded-full border-l xl:w-14 xl:h-14"
+            onClick={() => {
+              setTechIndex(2)
+            }}
+          >
             3
           </button>
         </div>
@@ -40,14 +80,10 @@ const Technology = () => {
             className="uppercase font-bellefair text-white 
         text-2xl mb-4 md:text-4xl xl:text-5xl"
           >
-            Launch Vehicle
+            {showTech?.name}
           </h4>
           <p className="text-lilac w-11/12 mx-auto sm:w-8/12 md:5/12 xl:m-0">
-            A launch vehicle or carrier rocket is a rocket-propelled vehicle
-            used to carry a payload from Earth's surface to space, usually to
-            Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
-            in operation. Standing 150 metres tall, it's quite an awe-inspiring
-            sight on the launch
+            {showTech?.description}
           </p>
         </div>
       </div>

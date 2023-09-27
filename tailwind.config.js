@@ -1,18 +1,3 @@
-//TODO: DELETE ALL THE IMPORTS WITH ONE CLICK.
-import bgMobile from './src/assets/home/background-home-mobile.jpg'
-import bgTablet from './src/assets/home/background-home-tablet.jpg'
-import bgDesktop from './src/assets/home/background-home-desktop.jpg'
-import bgDestMobile from './src/assets/destination/background-destination-mobile.jpg'
-import bgDestTablet from './src/assets/destination/background-destination-tablet.jpg'
-import bgDestDesktop from './src/assets/destination/background-destination-desktop.jpg'
-import bgCrewMobile from './src/assets/crew/background-crew-mobile.jpg'
-import bgCrewTablet from './src/assets/crew/background-crew-tablet.jpg'
-import bgCrewDesktop from './src/assets/crew/background-crew-desktop.jpg'
-import bgTechMobile from './src/assets/technology/background-technology-mobile.jpg'
-import bgTechTablet from './src/assets/technology/background-technology-tablet.jpg'
-import bgTechDesktop from './src/assets/technology/background-technology-desktop.jpg'
-import rocketBanner from './src/assets/technology/image-launch-vehicle-landscape.jpg'
-import rocketBannerDesktop from './src/assets/technology/image-launch-vehicle-portrait.jpg'
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -22,6 +7,11 @@ module.exports = {
       bellefair: ['Bellefair', 'serif'],
     },
     extend: {
+      boxShadow: {
+        ring: '0 0 0 25px rgba(255,255,255, 0.1)',
+        ringmd: '0 0 0 35px rgba(255,255,255, 0.1)',
+        ringxl: '0 0 0 50px rgba(255,255,255, 0.1)',
+      },
       colors: {
         lilac: '#D0D6F9',
         jetBlack: '#0B0D17',
