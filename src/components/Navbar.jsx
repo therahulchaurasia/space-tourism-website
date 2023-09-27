@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 const Navbar = () => {
   const [toggleNavBar, setToggleNavBar] = useState(false)
+
   return (
     <div>
       <nav className="hidden md:flex justify-between items-center pl-8 mb-4 xl:mt-8 relative">
@@ -63,8 +64,8 @@ const Navbar = () => {
         />
         <motion.img
           src={hamburger}
-          whileHover={{ rotate: 90 }}
-          transition={{ ease: 'easeOut', duration: 0.2 }}
+          // whileHover={{ rotate: 90 }}
+          // transition={{ ease: 'easeOut', duration: 0.2 }}
           alt="hamburger"
           className="h-auto max-w-full md:hidden cursor-pointer"
           onClick={() => {
@@ -72,7 +73,12 @@ const Navbar = () => {
           }}
         />
       </nav>
-      <AnimatePresence>
+      <div
+        className={classNames(
+          'fixed top-0 left-0 w-screen h-screen bg-transparent md:hidden',
+          { hidden: !toggleNavBar, fixed: toggleNavBar },
+        )}
+      >
         <motion.aside
           initial={{ x: 0 }}
           animate={{ x: 5 }}
@@ -124,7 +130,7 @@ const Navbar = () => {
             </h4>
           </div>
         </motion.aside>
-      </AnimatePresence>
+      </div>
     </div>
   )
 }

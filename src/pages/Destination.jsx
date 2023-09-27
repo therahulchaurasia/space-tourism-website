@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import moon from '../assets/destination/image-moon.webp'
 import { motion } from 'framer-motion'
+
 const Destination = () => {
+  const [showDestination, setShowDestination] = useState([])
+  const fetchData = async () => {
+    try {
+      let res = await fetch('destination.json', {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      })
+
+      let result = await res.json()
+      setShowDestination(result.destinations)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+  console.log(showDestination[1]?.images.webp)
   return (
     <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
       <Navbar />
@@ -14,10 +35,11 @@ const Destination = () => {
         <section className="xl:w-3/12">
           <div className="mb-6">
             <motion.img
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 200 }}
+              //TODO: As soon as I setup the animation it starts overlapping everything
+              // animate={{ rotate: 360 }}
+              // transition={{ repeat: Infinity, duration: 200 }}
               src={moon}
-              alt=""
+              alt="Planet"
               className="w-1/2 mx-auto sm:w-5/12 xl:w-full"
             />
           </div>
