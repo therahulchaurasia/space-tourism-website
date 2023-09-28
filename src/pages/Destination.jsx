@@ -26,7 +26,7 @@ const Destination = () => {
 
   console.log(showDestination)
   return (
-    <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
+    <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <h6 className="text-white text-center font-barlow uppercase tracking-widest mb-8 md:text-xl xl:text-start xl:ml-40 xl:mt-8">
         <span className="text-gray-500 font-bold pr-2">01</span> Pick your
@@ -35,11 +35,11 @@ const Destination = () => {
 
       <div className="flex flex-col xl:flex-row xl:justify-around">
         <section className="xl:w-3/12">
-          <div className="mb-6">
+          <div className="mb-6 relative">
             <motion.img
               //TODO: As soon as I setup the animation it starts overlapping everything
-              // whileHover={{ rotate: 360 }}
-              // transition={{ repeat: Infinity, duration: 200 }}
+              animate={{ rotate: 360 }}
+              transition={{ repeat: 'Infinity', duration: 150 }}
               src={showDestination?.images?.webp}
               alt="Planet"
               className="w-1/2 mx-auto sm:w-5/12 xl:w-full"

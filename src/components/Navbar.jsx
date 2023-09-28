@@ -80,14 +80,15 @@ const Navbar = () => {
         )}
       >
         <motion.aside
-          initial={{ x: 0 }}
-          animate={{ x: 5 }}
-          exit={{ x: 0 }}
-          // animate={{ x: toggleNavBar ? 5 : 0 }}
-          transition={{ ease: 'easeIn', duration: 0.5 }}
+          // initial={{ x: 0 }}
+          // animate={{ x: 1 }}
+          // exit={{ x: 0 }}
+          animate={{ x: toggleNavBar ? 5 : 0 }}
+          transition={{ ease: 'easeInOut', duration: 0.2 }}
           // transition={{ duration: 0.5 }}
+
           className={classNames(
-            'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl md:hidden',
+            'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl md:hidden ',
             { hidden: !toggleNavBar, fixed: toggleNavBar },
           )}
         >

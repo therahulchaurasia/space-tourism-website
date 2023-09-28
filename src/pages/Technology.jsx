@@ -25,7 +25,7 @@ const Technology = () => {
   console.log(showTech)
 
   return (
-    <div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
+    <div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <h6 className="text-white font-barlow uppercase tracking-widest mb-8  text-center md:text-xl  xl:mt-8 xl:text-start xl:mb-0 xl:mx-auto xl:w-11/12 xl:pl-10">
         <span className="text-gray-500 font-bold pr-2">03</span> Space launch
@@ -48,7 +48,7 @@ const Technology = () => {
         </div>
         <div className="flex justify-between mx-auto w-2/5 mb-6 sm:w-3/12 xl:flex-col xl:w-1/12 xl:m-0 xl:items-end gap-y-8 font-bellefair xl:text-2xl">
           <button
-            className="bg-white w-10 h-10 rounded-full xl:w-14 xl:h-14 "
+            className="text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t"
             onClick={() => {
               setTechIndex(0)
             }}
@@ -56,7 +56,7 @@ const Technology = () => {
             1
           </button>
           <button
-            className="text-white border border-gray-600 w-10 h-10 rounded-full xl:w-14 xl:h-14"
+            className="text-white border-b border-r  w-10 h-10 rounded-full xl:w-14 xl:h-14"
             onClick={() => {
               setTechIndex(1)
             }}
@@ -64,7 +64,7 @@ const Technology = () => {
             {/* TODO: border-l. looks cool */}2
           </button>
           <button
-            className="text-white  w-10 h-10 rounded-full border-l xl:w-14 xl:h-14"
+            className="text-white  w-10 h-10 rounded-full border-l border-t xl:w-14 xl:h-14"
             onClick={() => {
               setTechIndex(2)
             }}

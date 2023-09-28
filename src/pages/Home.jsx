@@ -1,8 +1,10 @@
 import Navbar from '../components/Navbar'
+import Loader from '../components/Loader'
 
 const Home = () => {
   return (
-    <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
+    // <Loader />
+    <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <div className="flex flex-col xl:flex-row items-center justify-around xl:mt-20">
         <section className="text-center my-10 xl:w-2/5 xl:text-start">

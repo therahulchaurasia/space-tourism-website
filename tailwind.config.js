@@ -8,9 +8,9 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        ring: '0 0 0 25px rgba(255,255,255, 0.1)',
-        ringmd: '0 0 0 35px rgba(255,255,255, 0.1)',
-        ringxl: '0 0 0 50px rgba(255,255,255, 0.1)',
+        ring: '0 0 0 25px rgba(255,255,255, 0.2)',
+        ringmd: '0 0 0 35px rgba(255,255,255, 0.2)',
+        ringxl: '0 0 0 50px rgba(255,255,255, 0.2)',
       },
       colors: {
         lilac: '#D0D6F9',

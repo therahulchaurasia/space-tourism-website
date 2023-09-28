@@ -23,7 +23,7 @@ const Crew = () => {
   }, [crewIndex])
   console.log(showCrew)
   return (
-    <div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute">
+    <div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <h6 className="text-white font-barlow uppercase tracking-widest mb-8 text-center md:text-xl xl:text-start xl:ml-56 xl:mt-8">
         <span className="text-gray-500 font-bold pr-2">02</span> Meet your crew
@@ -31,7 +31,11 @@ const Crew = () => {
       <div className="flex flex-col md:flex-col-reverse xl:flex-row-reverse">
         <section className="xl:w-5/12">
           <div className="mb-8 border-b border-slate-600 w-10/12 mx-auto md:border-0 md:mb-0">
-            <img src={showCrew?.images.webp} alt="" className="w-1/2 mx-auto" />
+            <img
+              src={showCrew?.images?.webp}
+              alt=""
+              className="w-1/2 mx-auto"
+            />
             {/* <hr className="w-10/12 mx-auto opacity-30" /> */}
           </div>
         </section>
