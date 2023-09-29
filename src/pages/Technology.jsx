@@ -50,9 +50,10 @@ const Technology = () => {
         <div className="flex justify-between mx-auto w-2/5 mb-6 sm:w-3/12 xl:flex-col xl:w-1/12 xl:m-0 xl:items-end gap-y-8 font-bellefair xl:text-2xl">
           <button
             className={classNames(
-              'text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t hover:border hover:border-gray-400 transition duration-300 ease-in-out',
+              'w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t hover:border hover:border-gray-400 transition duration-300 ease-in-out ',
               {
-                'bg-white text-black border-b': techIndex === 0,
+                'bg-white border-b': techIndex === 0,
+                'text-white': techIndex !== 0,
               },
             )}
             onClick={() => {
@@ -63,9 +64,10 @@ const Technology = () => {
           </button>
           <button
             className={classNames(
-              'text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-b border-r hover:border hover:border-gray-400 transition duration-300 ease-in-out',
+              'w-10 h-10 rounded-full xl:w-14 xl:h-14 border-b border-r hover:border hover:border-gray-400 transition duration-300 ease-in-out ',
               {
-                'bg-white text-black border-b': techIndex === 1,
+                'bg-white border-b': techIndex === 1,
+                'text-white': techIndex !== 1,
               },
             )}
             onClick={() => {
@@ -76,9 +78,10 @@ const Technology = () => {
           </button>
           <button
             className={classNames(
-              'text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t hover:border hover:border-gray-400 transition duration-300 ease-in-out',
+              'w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t hover:border hover:border-gray-400 transition duration-300 ease-in-out ',
               {
-                'bg-white text-black border-b': techIndex === 2,
+                'bg-white  border-b': techIndex === 2,
+                'text-white': techIndex !== 2,
               },
             )}
             onClick={() => {

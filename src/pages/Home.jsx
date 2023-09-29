@@ -1,9 +1,18 @@
 import Navbar from '../components/Navbar'
 import Loader from '../components/Loader'
+import { useEffect, useState } from 'react'
 
 const Home = () => {
-  return (
-    // <Loader />
+  const [loader, setLoader] = useState(false)
+  useEffect(() => {
+    setLoader(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 3000)
+  }, [])
+  return loader ? (
+    <Loader />
+  ) : (
     <div className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition duration-200 ease-in-out">
       <Navbar />
       <div className="flex flex-col xl:flex-row items-center justify-around xl:mt-20">
