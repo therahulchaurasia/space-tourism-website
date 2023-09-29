@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import commander from '../assets/crew/image-douglas-hurley.webp'
+import classNames from 'classnames'
 const Crew = () => {
   const [showCrew, setShowCrew] = useState([])
   const [crewIndex, setCrewIndex] = useState(0)
@@ -36,31 +37,42 @@ const Crew = () => {
               alt=""
               className="w-1/2 mx-auto"
             />
-            {/* <hr className="w-10/12 mx-auto opacity-30" /> */}
           </div>
         </section>
         <section className="flex flex-col md:flex-col-reverse xl:w-5/12">
           <div className="flex justify-between w-1/4 mx-auto mb-8 sm:w-2/12	xl:m-0">
             <button
-              className="w-3 h-3 rounded-full bg-zinc-600"
+              className={classNames('w-3 h-3 rounded-full hover:bg-zinc-400', {
+                'bg-white': crewIndex === 0,
+                'bg-zinc-600': crewIndex !== 0,
+              })}
               onClick={() => {
                 setCrewIndex(0)
               }}
             ></button>
             <button
-              className="w-3 h-3 rounded-full bg-zinc-600"
+              className={classNames('w-3 h-3 rounded-full hover:bg-zinc-400', {
+                'bg-white': crewIndex === 1,
+                'bg-zinc-600': crewIndex !== 1,
+              })}
               onClick={() => {
                 setCrewIndex(1)
               }}
             ></button>
             <button
-              className="w-3 h-3 rounded-full bg-zinc-600"
+              className={classNames('w-3 h-3 rounded-full hover:bg-zinc-400', {
+                'bg-white': crewIndex === 2,
+                'bg-zinc-600': crewIndex !== 2,
+              })}
               onClick={() => {
                 setCrewIndex(2)
               }}
             ></button>
             <button
-              className="w-3 h-3 rounded-full bg-zinc-600"
+              className={classNames('w-3 h-3 rounded-full  hover:bg-zinc-400', {
+                'bg-white': crewIndex === 3,
+                'bg-zinc-600': crewIndex !== 3,
+              })}
               onClick={() => {
                 setCrewIndex(3)
               }}

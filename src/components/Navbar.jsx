@@ -4,8 +4,10 @@ import hamburger from '../assets/shared/icon-hamburger.svg'
 import close from '../assets/shared/icon-close.svg'
 import classNames from 'classnames'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 const Navbar = () => {
+  const location = useLocation()
+  const { pathname } = location
   const [toggleNavBar, setToggleNavBar] = useState(false)
 
   return (
@@ -24,30 +26,58 @@ const Navbar = () => {
 				pt-8 bg-slate-400 bg-opacity-10 backdrop-blur-2xl
 				"
         >
-          <h4 className="border-b-2 border-slate-400 border-active:border-b-2 pb-8">
-            <Link to="/">
+          <Link to="/">
+            <h4
+              className={classNames(
+                'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
+                {
+                  'border-white': pathname === '/',
+                },
+              )}
+            >
               <span className="font-bold mr-2 hidden xl:inline">00</span>
               Home
-            </Link>
-          </h4>
-          <h4 className="active:border-b-2 pb-8">
-            <Link to="/destination">
+            </h4>
+          </Link>
+          <Link to="/destination">
+            <h4
+              className={classNames(
+                'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
+                {
+                  'border-white': pathname === '/destination',
+                },
+              )}
+            >
               <span className="font-bold mr-2 hidden xl:inline">01</span>
               Destination
-            </Link>
-          </h4>
-          <h4 className="active:border-b-2 pb-8">
-            <Link to="/crew">
+            </h4>
+          </Link>
+          <Link to="/crew">
+            <h4
+              className={classNames(
+                'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
+                {
+                  'border-white': pathname === '/crew',
+                },
+              )}
+            >
               <span className="font-bold mr-2 hidden xl:inline">02</span>
               Crew
-            </Link>
-          </h4>
-          <h4 className="active:border-b-2 pb-8">
-            <Link to="/technology">
+            </h4>
+          </Link>
+          <Link to="/technology">
+            <h4
+              className={classNames(
+                'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
+                {
+                  'border-white': pathname === '/technology',
+                },
+              )}
+            >
               <span className="font-bold mr-2 hidden xl:inline">03</span>
               Technology
-            </Link>
-          </h4>
+            </h4>
+          </Link>
         </div>
         <div
           className="absolute xl:border-b xl:border-zinc-600 xl:w-5/12 xl:h-px xl:left-40
@@ -75,7 +105,7 @@ const Navbar = () => {
       </nav>
       <div
         className={classNames(
-          'fixed top-0 left-0 w-screen h-screen bg-transparent md:hidden',
+          'fixed top-0 left-0 w-screen h-screen bg-nearTransparent md:hidden',
           { hidden: !toggleNavBar, fixed: toggleNavBar },
         )}
       >
@@ -88,7 +118,7 @@ const Navbar = () => {
           // transition={{ duration: 0.5 }}
 
           className={classNames(
-            'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl md:hidden ',
+            'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl md:hidden',
             { hidden: !toggleNavBar, fixed: toggleNavBar },
           )}
         >
@@ -108,27 +138,55 @@ const Navbar = () => {
               }}
             />
           </div>
-          <div className="uppercase text-white mt-8 flex flex-col justify-start gap-y-4 font-barlow pl-10 pr-1">
-            <h4 className="border-r-4">
-              <Link to="/">
-                <span className="font-bold mr-2 ">00</span> Home
-              </Link>
-            </h4>
-            <h4>
-              <Link to="/destination">
+          <div className="uppercase text-white mt-8 flex flex-col justify-start gap-y-6 font-barlow pl-10 pr-1 tracking-widest">
+            <Link to="/">
+              <h4
+                className={classNames(
+                  'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
+                  {
+                    'border-r-4 border-white': pathname === '/',
+                  },
+                )}
+              >
+                <span className="font-bold mr-2">00</span> Home
+              </h4>
+            </Link>
+            <Link to="/destination">
+              <h4
+                className={classNames(
+                  'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
+                  {
+                    'border-r-4 border-white': pathname === '/destination',
+                  },
+                )}
+              >
                 <span className="font-bold  mr-2">01</span> Destination
-              </Link>
-            </h4>
-            <h4>
-              <Link to="/crew">
+              </h4>
+            </Link>
+            <Link to="/crew">
+              <h4
+                className={classNames(
+                  'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
+                  {
+                    'border-r-4 border-white': pathname === '/crew',
+                  },
+                )}
+              >
                 <span className="font-bold  mr-2">02</span> Crew
-              </Link>
-            </h4>
-            <h4>
-              <Link to="/technology">
+              </h4>
+            </Link>
+            <Link to="/technology">
+              <h4
+                className={classNames(
+                  'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
+                  {
+                    'border-r-4 border-white': pathname === '/technology',
+                  },
+                )}
+              >
                 <span className="font-bold  mr-2">03</span> Technology
-              </Link>
-            </h4>
+              </h4>
+            </Link>
           </div>
         </motion.aside>
       </div>

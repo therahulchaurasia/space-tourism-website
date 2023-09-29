@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import rocketld from '../assets/technology/image-launch-vehicle-landscape.jpg'
 import rocketpt from '../assets/technology/image-launch-vehicle-portrait.jpg'
+import classNames from 'classnames'
 const Technology = () => {
   const [showTech, setShowTech] = useState([])
   const [techIndex, setTechIndex] = useState(0)
@@ -48,7 +49,12 @@ const Technology = () => {
         </div>
         <div className="flex justify-between mx-auto w-2/5 mb-6 sm:w-3/12 xl:flex-col xl:w-1/12 xl:m-0 xl:items-end gap-y-8 font-bellefair xl:text-2xl">
           <button
-            className="text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t"
+            className={classNames(
+              'text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t hover:border hover:border-gray-400 transition duration-300 ease-in-out',
+              {
+                'bg-white text-black border-b': techIndex === 0,
+              },
+            )}
             onClick={() => {
               setTechIndex(0)
             }}
@@ -56,7 +62,12 @@ const Technology = () => {
             1
           </button>
           <button
-            className="text-white border-b border-r  w-10 h-10 rounded-full xl:w-14 xl:h-14"
+            className={classNames(
+              'text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-b border-r hover:border hover:border-gray-400 transition duration-300 ease-in-out',
+              {
+                'bg-white text-black border-b': techIndex === 1,
+              },
+            )}
             onClick={() => {
               setTechIndex(1)
             }}
@@ -64,7 +75,12 @@ const Technology = () => {
             {/* TODO: border-l. looks cool */}2
           </button>
           <button
-            className="text-white  w-10 h-10 rounded-full border-l border-t xl:w-14 xl:h-14"
+            className={classNames(
+              'text-white w-10 h-10 rounded-full xl:w-14 xl:h-14 border-l border-t hover:border hover:border-gray-400 transition duration-300 ease-in-out',
+              {
+                'bg-white text-black border-b': techIndex === 2,
+              },
+            )}
             onClick={() => {
               setTechIndex(2)
             }}

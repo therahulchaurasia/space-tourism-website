@@ -16,6 +16,7 @@ module.exports = {
         lilac: '#D0D6F9',
         jetBlack: '#0B0D17',
         white: '#FFFFFF',
+        nearTransparent: 'rgba(0,0,0,.3)',
       },
       backgroundImage: {
         heroMobile: "url('/src/assets/home/background-home-mobile.jpg')",

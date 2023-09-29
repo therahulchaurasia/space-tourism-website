@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import Navbar from '../components/Navbar'
 import moon from '../assets/destination/image-moon.webp'
 import { motion } from 'framer-motion'
+import classNames from 'classnames'
 
 const Destination = () => {
   const [showDestination, setShowDestination] = useState([])
@@ -24,7 +25,6 @@ const Destination = () => {
     fetchData()
   }, [planetIndex])
 
-  console.log(showDestination)
   return (
     <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
@@ -49,7 +49,12 @@ const Destination = () => {
         <section className="xl:w-5/12 ">
           <div className="flex justify-between w-1/2 text-lilac font-barlow mx-auto mb-5 sm:w-4/12 xl:w-5/12 xl:mx-0 xl:pl-2 ">
             <p
-              className="hover:text-white text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+              className={classNames(
+                'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
+                {
+                  'border-white': planetIndex === 0,
+                },
+              )}
               onClick={() => {
                 setPlanetIndex(0)
               }}
@@ -57,7 +62,12 @@ const Destination = () => {
               Moon
             </p>
             <p
-              className="hover:text-white text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+              className={classNames(
+                'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
+                {
+                  'border-white': planetIndex === 1,
+                },
+              )}
               onClick={() => {
                 setPlanetIndex(1)
               }}
@@ -65,7 +75,12 @@ const Destination = () => {
               Mars
             </p>
             <p
-              className="hover:text-white text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+              className={classNames(
+                'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
+                {
+                  'border-white': planetIndex === 2,
+                },
+              )}
               onClick={() => {
                 setPlanetIndex(2)
               }}
@@ -73,7 +88,12 @@ const Destination = () => {
               Europa
             </p>
             <p
-              className="hover:text-white text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-white cursor-pointer"
+              className={classNames(
+                'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
+                {
+                  'border-white': planetIndex === 3,
+                },
+              )}
               onClick={() => {
                 setPlanetIndex(3)
               }}
