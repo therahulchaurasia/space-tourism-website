@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Space Tourism Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a practice project provided by [@FrontendMentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). I tried to use this project as a refresher. At the same time, I focused on learning a new and useful library called framer motion.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Screenshot
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<table border=0>
+ <tr >
+    <td><b style="font-size:20px">Desktop</b></td>
+ </tr>
+ <tr>
+		<td>
+		1) Home Page
+		<img src="./screenshots/desktop/d-home.png" alt="Home" width="100%" >
+		</td>
+		<td>
+		2) Destination Page
+		<img src="./screenshots/desktop/d-destination.png" alt="Destination" width="100%" >
+		</td>
+ </tr>
+ <tr>
+    <td>
+		3) Crew Details Page
+		<img src="./screenshots/desktop/d-crew.png" alt="Crew" width="100%" >
+				</td>
+    <td>
+    	4) Tech Details Page
+    	<img src="./screenshots/desktop/d-technology.png" alt="Technology" width="100%" >
+				</td>
+</tr>
+</table>
+<table border="0">
+  <tr >
+    <td width='70%'><b style="font-size:20px">Tablet</b></td>
+    <td width='30%'><b style="font-size:20px">Mobile</b></td>
+ </tr>
+ <tr>
+    <td>
+		1) Home Page
+	<img src="./screenshots/tablet/t-home.png" alt="Home" width="100%" >
+	2) Destination Page
+<img src="./screenshots/tablet/t-destination.png" alt="Destination" width="100%" >
+3) Crew Details Page
+<img src="./screenshots/tablet/t-crew.png" alt="Crew" width="100%" >
+4) Tech Details Page
+<img src="./screenshots/tablet/t-technology.png" alt="Technology" width="100%" >
+</td>
+    <td>
+		1) Home Page
+<img src="./screenshots/mobile/m-home.png" alt="Home" width="100%" >
+2) Destination Page
+<img src="./screenshots/mobile/m-destination.png" alt="Destination" width="100%" >
+3) Crew Details Page
+<img src="./screenshots/mobile/m-crew.png" alt="Crew" width="100%" >
+4) Technology Page
+<img src="./screenshots/mobile/m-technology.png" alt="Technology" width="100%" >
+5) Navbar Open
+<img src="./screenshots/mobile/m-navbar.png" alt="Navbar" width="100%" >
+    	</td>
 
-### `npm test`
+ </tr>
+</table>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## My process
 
-### `npm run build`
+- Creating Mobile Designs:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Begin with the mobile design for the home page.
+2. Move on to create mobile designs for the destination, crew, and technology pages.
+3. Design the mobile version of the navigation bar (navbar).
+4. Implement the required functionality for the mobile navbar.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Tablet Design:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Adapt the page designs to match the tablet design.
+2. Develop the navbar for tablet devices.
+3. Ensure the tablet navbar is fully functional.
 
-### `npm run eject`
+- Desktop Design:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Create the desktop version of the navbar.
+2. Add the necessary functionality to the desktop navbar.
+3. Implement animations and functionality to switch page contents.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React.js
+- Tailwind CSS v3
+- Flexbox
+- Framer Motion
+- CSS Grid
+- Mobile-first workflow
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### What I learned
 
-## Learn More
+I learned how to add the glassmorphism effect to components. Another thing I learned is about framer components like motion, and animatePresence.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Useful resources
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [tailwindcss.com](https://tailwindcss.com/) - Tailwind CSS documentation
+- [Framer Motion](https://www.framer.com/motion/) - Framer motion documentation (I would suggest playing around in the sandbox with a feature if you like it)
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Frontend Mentor - [@therahulchaurasia](https://www.frontendmentor.io/profile/therahulchaurasia)
+- HackerRank - [@therahulchaurasia](https://www.hackerrank.com/therahulchauras1)
