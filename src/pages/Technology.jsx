@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import rocketld from '../assets/technology/image-launch-vehicle-landscape.jpg'
 import rocketpt from '../assets/technology/image-launch-vehicle-portrait.jpg'
+import Loader from '../components/Loader'
 import classNames from 'classnames'
 const Technology = () => {
   const [showTech, setShowTech] = useState([])
   const [techIndex, setTechIndex] = useState(0)
+  const [loader, setLoader] = useState(false)
   const fetchData = async () => {
     try {
       let res = await fetch('technology.json', {
@@ -23,9 +25,17 @@ const Technology = () => {
   useEffect(() => {
     fetchData()
   }, [techIndex])
-  console.log(showTech)
 
-  return (
+  useEffect(() => {
+    setLoader(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 3000)
+  }, [])
+
+  return loader ? (
+    <Loader />
+  ) : (
     <div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <h6 className="text-white font-barlow uppercase tracking-widest mb-8  text-center md:text-xl  xl:mt-8 xl:text-start xl:mb-0 xl:mx-auto xl:w-11/12 xl:pl-10">

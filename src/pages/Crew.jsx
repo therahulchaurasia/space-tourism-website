@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import commander from '../assets/crew/image-douglas-hurley.webp'
 import classNames from 'classnames'
+import Loader from '../components/Loader'
 const Crew = () => {
   const [showCrew, setShowCrew] = useState([])
   const [crewIndex, setCrewIndex] = useState(0)
@@ -22,8 +23,17 @@ const Crew = () => {
   useEffect(() => {
     fetchData()
   }, [crewIndex])
-  console.log(showCrew)
-  return (
+
+  const [loader, setLoader] = useState(false)
+  useEffect(() => {
+    setLoader(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 3000)
+  }, [])
+  return loader ? (
+    <Loader />
+  ) : (
     <div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <h6 className="text-white font-barlow uppercase tracking-widest mb-8 text-center md:text-xl xl:text-start xl:ml-56 xl:mt-8">

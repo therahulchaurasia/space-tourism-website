@@ -12,8 +12,8 @@ export default function Loader() {
   }, [])
 
   return (
-    <div className="h-screen w-screen flex justify-center items-center bg-black text-white transition-all duration-200 easeOut">
-      <motion.h1 className="text-6xl font-barlow">{rounded}</motion.h1>
-    </div>
+    <motion.div className="h-screen w-screen flex justify-center items-center bg-black text-white transition-all duration-200 easeOut">
+      <motion.h1 className="text-9xl font-barlow">{rounded}</motion.h1>
+    </motion.div>
   )
 }

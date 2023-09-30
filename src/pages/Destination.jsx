@@ -3,11 +3,20 @@ import Navbar from '../components/Navbar'
 import moon from '../assets/destination/image-moon.webp'
 import { motion } from 'framer-motion'
 import classNames from 'classnames'
+import Loader from '../components/Loader'
 
 const Destination = () => {
   const [showDestination, setShowDestination] = useState([])
   const [planetIndex, setPlanetIndex] = useState(0)
-  const fetchData = async () => {
+  const [loader, setLoader] = useState(false)
+  useEffect(() => {
+    setLoader(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 3000)
+  }, [])
+  // TODO: Why should I fetch all the data again and again if I am going to change the index
+  const fetchData = useCallback(async () => {
     try {
       let res = await fetch('destination.json', {
         headers: {
@@ -20,12 +29,14 @@ const Destination = () => {
     } catch (error) {
       console.log(error)
     }
-  }
+  }, [planetIndex])
   useEffect(() => {
     fetchData()
   }, [planetIndex])
 
-  return (
+  return loader ? (
+    <Loader />
+  ) : (
     <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <h6 className="text-white text-center font-barlow uppercase tracking-widest mb-8 md:text-xl xl:text-start xl:ml-40 xl:mt-8">
