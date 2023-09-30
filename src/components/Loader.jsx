@@ -12,7 +12,11 @@ export default function Loader() {
   }, [])
 
   return (
-    <motion.div className="h-screen w-screen flex justify-center items-center bg-black text-white transition-all duration-200 easeOut">
+    <motion.div
+      className="h-screen w-full flex justify-center items-center bg-black text-white transition duration-50 ease-out"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <motion.h1 className="text-9xl font-barlow">{rounded}</motion.h1>
     </motion.div>
   )

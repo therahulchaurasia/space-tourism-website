@@ -33,9 +33,7 @@ const Technology = () => {
     }, 3000)
   }, [])
 
-  return loader ? (
-    <Loader />
-  ) : (
+  return (
     <div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
       <Navbar />
       <h6 className="text-white font-barlow uppercase tracking-widest mb-8  text-center md:text-xl  xl:mt-8 xl:text-start xl:mb-0 xl:mx-auto xl:w-11/12 xl:pl-10">
