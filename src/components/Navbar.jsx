@@ -12,7 +12,12 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="hidden md:flex justify-between items-center pl-8 mb-4 xl:mt-8 relative">
+      <motion.nav
+        className="hidden md:flex justify-between items-center pl-8 mb-4 xl:mt-8 relative"
+        initial={{ y: -250 }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 80, delay: 0.5 }}
+      >
         <motion.img
           whileHover={{ rotate: 90 }}
           transition={{ ease: 'easeOut', duration: 0.2 }}
@@ -32,7 +37,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/',
-                },
+                }
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">00</span>
@@ -45,7 +50,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/destination',
-                },
+                }
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">01</span>
@@ -58,7 +63,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/crew',
-                },
+                }
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">02</span>
@@ -71,7 +76,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/technology',
-                },
+                }
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">03</span>
@@ -83,7 +88,7 @@ const Navbar = () => {
           className="absolute xl:border-b xl:border-zinc-600 xl:w-5/12 xl:h-px xl:left-40
 				"
         ></div>
-      </nav>
+      </motion.nav>
       <nav className="flex justify-between items-center mx-6 my-6 md:hidden">
         <motion.img
           whileHover={{ rotate: 90 }}
@@ -103,23 +108,30 @@ const Navbar = () => {
           }}
         />
       </nav>
-      <div
+      <motion.div
         className={classNames(
           'fixed top-0 left-0 w-screen h-screen bg-nearTransparent md:hidden',
-          { hidden: !toggleNavBar, fixed: toggleNavBar },
+          { hidden: !toggleNavBar, fixed: toggleNavBar }
         )}
+        // initial={{ x: '100vw' }}
+        // animate={{ x: 0 }}
+        // exit={{ x: '100vw' }}
+        // transition={{ type: 'spring', stiffness: 120 }}
       >
         <motion.aside
-          // initial={{ x: 0 }}
-          // animate={{ x: 1 }}
-          // exit={{ x: 0 }}
+          // initial={{ x: -100 }}
+          // animate={{ x: 0 }}
+          // exit={{ x: -100 }}
           animate={{ x: toggleNavBar ? 5 : 0 }}
-          transition={{ ease: 'easeInOut', duration: 0.2 }}
+          transition={{
+            type: 'spring',
+            stiffness: 120,
+          }}
           // transition={{ duration: 0.5 }}
 
           className={classNames(
             'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl md:hidden',
-            { hidden: !toggleNavBar, fixed: toggleNavBar },
+            { hidden: !toggleNavBar, fixed: toggleNavBar }
           )}
         >
           <div className="my-6 mx-6 flex items-center justify-end">
@@ -145,7 +157,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/',
-                  },
+                  }
                 )}
               >
                 <span className="font-bold mr-2">00</span> Home
@@ -157,7 +169,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/destination',
-                  },
+                  }
                 )}
               >
                 <span className="font-bold  mr-2">01</span> Destination
@@ -169,7 +181,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/crew',
-                  },
+                  }
                 )}
               >
                 <span className="font-bold  mr-2">02</span> Crew
@@ -181,7 +193,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/technology',
-                  },
+                  }
                 )}
               >
                 <span className="font-bold  mr-2">03</span> Technology
@@ -189,7 +201,7 @@ const Navbar = () => {
             </Link>
           </div>
         </motion.aside>
-      </div>
+      </motion.div>
     </div>
   )
 }
