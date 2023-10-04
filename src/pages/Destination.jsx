@@ -4,6 +4,7 @@ import moon from '../assets/destination/image-moon.webp'
 import { motion } from 'framer-motion'
 import classNames from 'classnames'
 import Loader from '../components/Loader'
+import { type } from '@testing-library/user-event/dist/type'
 
 const Destination = () => {
   const [showDestination, setShowDestination] = useState([])
@@ -35,18 +36,32 @@ const Destination = () => {
   }, [planetIndex])
 
   return (
-    <div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out">
+    <motion.div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden">
       <Navbar />
-      <h6 className="text-white text-center font-barlow uppercase tracking-widest mb-8 md:text-xl xl:text-start xl:ml-40 xl:mt-8">
+      <motion.h6
+        className="text-white text-center font-barlow uppercase tracking-widest mb-8 md:text-xl xl:text-start xl:ml-40 xl:mt-8 "
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+        transition={{ type: 'spring', stiffness: 50 }}
+      >
         <span className="text-gray-500 font-bold pr-2">01</span> Pick your
         destination
-      </h6>
+      </motion.h6>
 
-      <div className="flex flex-col xl:flex-row xl:justify-around">
-        <section className="xl:w-3/12">
+      <motion.div
+        className="flex flex-col xl:flex-row xl:justify-around "
+        // initial={{ x: '-100vw' }}
+        // animate={{ x: 0 }}
+        // transition={{ type: 'spring', delay: 0.5, stiffness: 50 }}
+      >
+        <motion.section
+          className="xl:w-3/12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3 }}
+        >
           <div className="mb-6 relative">
             <motion.img
-              //TODO: As soon as I setup the animation it starts overlapping everything
               animate={{ rotate: 360 }}
               transition={{ repeat: 'Infinity', duration: 150 }}
               src={showDestination?.images?.webp}
@@ -54,8 +69,13 @@ const Destination = () => {
               className="w-1/2 mx-auto sm:w-5/12 xl:w-full"
             />
           </div>
-        </section>
-        <section className="xl:w-5/12 ">
+        </motion.section>
+        <motion.section
+          className="xl:w-5/12 "
+          initial={{ x: '100vw' }}
+          animate={{ x: 0 }}
+          transition={{ type: 'spring', stiffness: 50 }}
+        >
           <div className="flex justify-between w-1/2 text-lilac font-barlow mx-auto mb-5 sm:w-4/12 xl:w-5/12 xl:mx-0 xl:pl-2 ">
             <p
               className={classNames(
@@ -138,9 +158,9 @@ const Destination = () => {
               </h2>
             </div>
           </div>
-        </section>
-      </div>
-    </div>
+        </motion.section>
+      </motion.div>
+    </motion.div>
   )
 }
 
