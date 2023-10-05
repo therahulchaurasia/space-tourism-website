@@ -38,7 +38,7 @@ const Technology = () => {
     <div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden">
       <Navbar />
       <motion.h6
-        className="text-white font-barlow uppercase tracking-widest mb-8  text-center md:text-xl  xl:mt-8 xl:text-start xl:mb-0 xl:mx-auto xl:w-11/12 xl:pl-10"
+        className="text-white font-barlow uppercase tracking-widest mb-8  text-center md:text-xl  xl:mt-8 xl:text-start xl:mb-0 xl:mx-auto xl:w-10/12"
         initial={{ x: '-100vw' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', stiffness: 50 }}

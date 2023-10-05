@@ -40,8 +40,8 @@ const Destination = () => {
       <Navbar />
       <motion.h6
         className="text-white text-center font-barlow uppercase tracking-widest mb-8 md:text-xl xl:text-start xl:ml-40 xl:mt-8 "
-        initial={{ x: '-100vw' }}
-        animate={{ x: 0 }}
+        initial={{ x: '-100vw', opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 50 }}
       >
         <span className="text-gray-500 font-bold pr-2">01</span> Pick your
@@ -72,8 +72,8 @@ const Destination = () => {
         </motion.section>
         <motion.section
           className="xl:w-5/12 "
-          initial={{ x: '100vw' }}
-          animate={{ x: 0 }}
+          initial={{ x: '100vw', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 50 }}
         >
           <div className="flex justify-between w-1/2 text-lilac font-barlow mx-auto mb-5 sm:w-4/12 xl:w-5/12 xl:mx-0 xl:pl-2 ">

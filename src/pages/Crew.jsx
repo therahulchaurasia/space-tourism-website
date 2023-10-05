@@ -36,14 +36,14 @@ const Crew = () => {
     <div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden">
       <Navbar />
       <motion.h6
-        className="text-white font-barlow uppercase tracking-widest mb-8 text-center md:text-xl xl:text-start xl:ml-56 xl:mt-8"
+        className="text-white font-barlow uppercase tracking-widest mb-8 text-center md:text-xl xl:hidden"
         initial={{ x: '-100vw' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', stiffness: 50 }}
       >
         <span className="text-gray-500 font-bold pr-2">02</span> Meet your crew
       </motion.h6>
-      <div className="flex flex-col md:flex-col-reverse xl:flex-row-reverse">
+      <div className="flex flex-col md:flex-col-reverse xl:flex-row-reverse xl:mt-16">
         <motion.section
           className="xl:w-5/12"
           initial={{ x: '100vw' }}
@@ -104,6 +104,10 @@ const Crew = () => {
           </div>
 
           <div className="mb-8 text-center xl:text-start">
+            <motion.h6 className="hidden text-white font-barlow uppercase tracking-widest md:text-xl xl:block xl: mb-14 ">
+              <span className="text-gray-500 font-bold pr-2">02</span> Meet your
+              crew
+            </motion.h6>
             <h5 className="uppercase font-bellefair text-zinc-400 mb-2 md:text-2xl xl:text-3xl">
               {showCrew?.role}
             </h5>
