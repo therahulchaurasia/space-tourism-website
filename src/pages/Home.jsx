@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar'
 import Loader from '../components/Loader'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import OtherLoader from '../components/OtherLoader'
 
 const Home = () => {
   const [loader, setLoader] = useState(false)
