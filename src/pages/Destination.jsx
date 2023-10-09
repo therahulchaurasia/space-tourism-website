@@ -84,7 +84,7 @@ const Destination = () => {
               <motion.section
                 className="xl:w-5/12 "
                 variants={containerVariants}
-                initial="hidden"
+                initial={{ x: '100vw' }}
                 animate="visible"
               >
                 <div className="flex justify-between w-1/2 text-lilac font-barlow mx-auto mb-5 sm:w-4/12 xl:w-5/12 xl:mx-0 xl:pl-2 ">
