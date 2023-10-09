@@ -1,21 +1,25 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import Navbar from '../components/Navbar'
-import moon from '../assets/destination/image-moon.webp'
-import { motion, AnimatePresence } from 'framer-motion'
 import classNames from 'classnames'
-import Loader from '../components/Loader'
+import { AnimatePresence, motion } from 'framer-motion'
+import React, { useCallback, useEffect, useState } from 'react'
+import Navbar from '../components/Navbar'
 import OtherLoader from '../components/OtherLoader'
 
 const Destination = () => {
+  const options = ['Moon', 'Mars', 'Europa', 'Titan']
   const [showDestination, setShowDestination] = useState([])
   const [planetIndex, setPlanetIndex] = useState(0)
   const [loader, setLoader] = useState(false)
-  useEffect(() => {
-    setLoader(true)
-    setTimeout(() => {
-      setLoader(false)
-    }, 3000)
-  }, [])
+
+  const containerVariants = {
+    hidden: {
+      x: '-100vw',
+    },
+    visible: {
+      x: 0,
+      transition: { type: 'spring', stiffness: 50, delay: 0.5 },
+    },
+  }
+
   // TODO: Why should I fetch all the data again and again if I am going to change the index
   const fetchData = useCallback(async () => {
     try {
@@ -35,6 +39,14 @@ const Destination = () => {
     fetchData()
   }, [planetIndex])
 
+  //! Loader
+  useEffect(() => {
+    setLoader(true)
+    setTimeout(() => {
+      setLoader(false)
+    }, 3000)
+  }, [])
+
   return (
     <>
       <AnimatePresence>{loader && <OtherLoader />} </AnimatePresence>
@@ -43,21 +55,16 @@ const Destination = () => {
           <motion.div className="bg-destinationMobile md:bg-destinationTablet xl:bg-destinationDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden">
             <Navbar />
             <motion.h6
-              className="text-white text-center font-barlow uppercase tracking-widest mb-8 md:text-xl xl:text-start xl:ml-40 xl:mt-8 "
-              initial={{ x: '-100vw' }}
-              animate={{ x: 0 }}
-              transition={{ type: 'spring', stiffness: 50, delay: 0.5 }}
+              className="text-white text-center font-barlow uppercase tracking-widest mb-8 md:text-xl xl:text-start xl:ml-40 xl:mt-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
             >
               <span className="text-gray-500 font-bold pr-2">01</span> Pick your
               destination
             </motion.h6>
 
-            <motion.div
-              className="flex flex-col xl:flex-row xl:justify-around "
-              // initial={{ x: '-100vw' }}
-              // animate={{ x: 0 }}
-              // transition={{ type: 'spring', delay: 0.5, stiffness: 50 }}
-            >
+            <motion.div className="flex flex-col xl:flex-row xl:justify-around ">
               <motion.section
                 className="xl:w-3/12"
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -76,63 +83,28 @@ const Destination = () => {
               </motion.section>
               <motion.section
                 className="xl:w-5/12 "
-                initial={{ x: '100vw' }}
-                animate={{ x: 0 }}
-                transition={{ type: 'spring', stiffness: 50, delay: 0.5 }}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
               >
                 <div className="flex justify-between w-1/2 text-lilac font-barlow mx-auto mb-5 sm:w-4/12 xl:w-5/12 xl:mx-0 xl:pl-2 ">
-                  <p
-                    className={classNames(
-                      'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
-                      {
-                        'border-white': planetIndex === 0,
-                      }
-                    )}
-                    onClick={() => {
-                      setPlanetIndex(0)
-                    }}
-                  >
-                    Moon
-                  </p>
-                  <p
-                    className={classNames(
-                      'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
-                      {
-                        'border-white': planetIndex === 1,
-                      }
-                    )}
-                    onClick={() => {
-                      setPlanetIndex(1)
-                    }}
-                  >
-                    Mars
-                  </p>
-                  <p
-                    className={classNames(
-                      'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
-                      {
-                        'border-white': planetIndex === 2,
-                      }
-                    )}
-                    onClick={() => {
-                      setPlanetIndex(2)
-                    }}
-                  >
-                    Europa
-                  </p>
-                  <p
-                    className={classNames(
-                      'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
-                      {
-                        'border-white': planetIndex === 3,
-                      }
-                    )}
-                    onClick={() => {
-                      setPlanetIndex(3)
-                    }}
-                  >
-                    Titan
-                  </p>
+                  {options.map((option, id) => {
+                    return (
+                      <p
+                        className={classNames(
+                          'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
+                          {
+                            'border-white': planetIndex === id,
+                          }
+                        )}
+                        onClick={() => {
+                          setPlanetIndex(id)
+                        }}
+                      >
+                        {option}
+                      </p>
+                    )
+                  })}
                 </div>
                 <div className="mb-8  text-center xl:text-start">
                   <h4 className="uppercase text-white font-bellefair text-5xl mb-2 sm:text-6xl md:text-7xl xl:text-8xl">

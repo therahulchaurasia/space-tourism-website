@@ -2,6 +2,8 @@
 
 It is a practice project provided by [@FrontendMentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). I tried to use this project as a refresher. At the same time, I focused on learning a new and useful library called framer motion.
 
+- [Live Demo](https://fm-space-tourism-website.onrender.com/)
+
 ## Table of contents
 
 - [Overview](#overview)

@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar'
 import Loader from '../components/Loader'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import OtherLoader from '../components/OtherLoader'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [loader, setLoader] = useState(false)
@@ -39,9 +39,11 @@ const Home = () => {
                 </h6>
               </section>
               <div className="text-center xl:w-2/5">
-                <button className="bg-white w-32 h-32 rounded-full font-bellefair tracking-wide uppercase text-l sm:w-40 sm:h-40 md:w-52 md:h-52 sm:text-2xl md:text-3xl md:mb-6 xl:w-60 xl:h-60 hover:shadow-ring md:hover:shadow-ringmd xl:hover:shadow-ringxl transistion-all duration-300 ease-in-out">
-                  Explore
-                </button>
+                <Link to={'/destination'}>
+                  <button className="bg-white w-32 h-32 rounded-full font-bellefair tracking-wide uppercase text-l sm:w-40 sm:h-40 md:w-52 md:h-52 sm:text-2xl md:text-3xl md:mb-6 xl:w-60 xl:h-60 hover:shadow-ring md:hover:shadow-ringmd xl:hover:shadow-ringxl transistion-all duration-300 ease-in-out">
+                    Explore
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
