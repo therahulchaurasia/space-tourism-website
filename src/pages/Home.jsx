@@ -18,7 +18,7 @@ const Home = () => {
       <AnimatePresence>
         {!loader && (
           <motion.div
-            className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition duration-200 ease-in-out"
+            className="bg-heroMobile md:bg-heroTablet xl:bg-heroDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition duration-200 ease-in-out z-10"
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
           >

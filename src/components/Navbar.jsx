@@ -37,7 +37,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/',
-                }
+                },
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">00</span>
@@ -50,7 +50,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/destination',
-                }
+                },
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">01</span>
@@ -63,7 +63,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/crew',
-                }
+                },
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">02</span>
@@ -76,7 +76,7 @@ const Navbar = () => {
                 'border-b-2 border-transparent hover:border-slate-400 hover:border-b-2 pb-8 transition duration-300 ease-out',
                 {
                   'border-white': pathname === '/technology',
-                }
+                },
               )}
             >
               <span className="font-bold mr-2 hidden xl:inline">03</span>
@@ -108,8 +108,8 @@ const Navbar = () => {
       </nav>
       <motion.div
         className={classNames(
-          'fixed top-0 left-0 w-screen h-screen bg-nearTransparent md:hidden',
-          { hidden: !toggleNavBar, fixed: toggleNavBar }
+          'fixed top-0 left-0 w-screen h-screen bg-nearTransparent md:hidden z-50',
+          { hidden: !toggleNavBar, fixed: toggleNavBar },
         )}
       >
         <motion.aside
@@ -120,7 +120,7 @@ const Navbar = () => {
           }}
           className={classNames(
             'bg-blue-500 w-2/3 h-screen fixed top-0 right-0 bg-opacity-10 backdrop-blur-2xl md:hidden z-50',
-            { hidden: !toggleNavBar, fixed: toggleNavBar }
+            { hidden: !toggleNavBar, fixed: toggleNavBar },
           )}
         >
           <div className="my-6 mx-6 flex items-center justify-end">
@@ -142,7 +142,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/',
-                  }
+                  },
                 )}
               >
                 <span className="font-bold mr-2">00</span> Home
@@ -154,7 +154,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/destination',
-                  }
+                  },
                 )}
               >
                 <span className="font-bold  mr-2">01</span> Destination
@@ -166,7 +166,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/crew',
-                  }
+                  },
                 )}
               >
                 <span className="font-bold  mr-2">02</span> Crew
@@ -178,7 +178,7 @@ const Navbar = () => {
                   'hover:border-r-4 hover:border-gray-400 transition duration-300 ease-out',
                   {
                     'border-r-4 border-white': pathname === '/technology',
-                  }
+                  },
                 )}
               >
                 <span className="font-bold  mr-2">03</span> Technology

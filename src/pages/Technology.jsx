@@ -49,7 +49,7 @@ const Technology = () => {
       <AnimatePresence>{loader && <OtherLoader />}</AnimatePresence>
       <AnimatePresence>
         {!loader && (
-          <motion.div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden">
+          <motion.div className="bg-techMobile md:bg-techTablet xl:bg-techDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden z-10">
             <Navbar />
             <motion.h6
               className="text-white font-barlow uppercase tracking-widest mb-8  text-center md:text-xl  xl:mt-8 xl:text-start xl:mb-0 xl:mx-auto xl:w-11/12 xl:pl-10"
@@ -99,7 +99,7 @@ const Technology = () => {
                         {
                           'bg-white border-b': techIndex === idx,
                           'text-white': techIndex !== idx,
-                        }
+                        },
                       )}
                       onClick={() => {
                         setTechIndex(idx)
