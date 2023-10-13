@@ -48,7 +48,7 @@ const Crew = () => {
       <AnimatePresence>{loader && <OtherLoader />} </AnimatePresence>
       <AnimatePresence>
         {!loader && (
-          <motion.div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden">
+          <motion.div className="bg-crewMobile md:bg-crewTablet xl:bg-crewDesktop bg-no-repeat bg-cover w-full max-w-screen min-h-screen absolute transition-all duration-200 ease-in-out overflow-hidden z-10">
             <Navbar />
             <motion.h6
               className="text-white font-barlow uppercase tracking-widest mb-8 text-center md:text-xl xl:text-start xl:ml-56 xl:mt-8"
