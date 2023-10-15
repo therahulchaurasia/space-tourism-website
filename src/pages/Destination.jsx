@@ -35,9 +35,10 @@ const Destination = () => {
       console.log(error)
     }
   }, [planetIndex])
+
   useEffect(() => {
     fetchData()
-  }, [planetIndex])
+  }, [fetchData])
 
   //! Loader
   useEffect(() => {
@@ -67,8 +68,8 @@ const Destination = () => {
             <motion.div className="flex flex-col xl:flex-row xl:justify-around ">
               <motion.section
                 className="xl:w-3/12"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ scale: 0.5 }}
+                animate={{ scale: 1 }}
                 transition={{ duration: 3, delay: 0.5 }}
               >
                 <div className="mb-6 relative">
@@ -95,7 +96,7 @@ const Destination = () => {
                           'text-sm uppercase tracking-widest border-b-2 border-transparent hover:border-b-2 hover:border-gray-400 cursor-pointer transition duration-200 ease-in-out',
                           {
                             'border-white': planetIndex === id,
-                          }
+                          },
                         )}
                         onClick={() => {
                           setPlanetIndex(id)
